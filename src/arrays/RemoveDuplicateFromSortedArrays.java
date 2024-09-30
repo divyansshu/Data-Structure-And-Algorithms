@@ -25,7 +25,5 @@ public class RemoveDuplicateFromSortedArrays {
         for(int i = 0; i < k; i++) {
             System.out.print(arr[i]+" ");
         }
-
-
     }
 }
