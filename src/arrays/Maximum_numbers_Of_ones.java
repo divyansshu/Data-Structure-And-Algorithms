@@ -4,9 +4,10 @@ import java.util.Arrays;
 
 public class Maximum_numbers_Of_ones {
 
-
-    /**
-      Brute force method
+    // we are not given a sorted binary(contains only zero and one) 
+    //time complexity: O(n*m) 
+    // n = number of rows
+    // m = number of columns
     public static int[] rowAndMaximumOnes(int[][] mat) {
 
         int row = mat.length;
@@ -33,10 +34,14 @@ public class Maximum_numbers_Of_ones {
 
         return arr;
     }
-     **/
+     
 
     public static void main(String[] args) {
-        int[][] arr = {{0},{1},{1},{1},{0}};
+        int[][] arr =  {{0, 0, 0, 1},
+            {1, 1, 1, 1},
+            {0, 1, 1, 1},
+            {0, 0, 1, 0}
+        };
         System.out.println(Arrays.toString(rowAndMaximumOnes(arr)));
     }
 }
