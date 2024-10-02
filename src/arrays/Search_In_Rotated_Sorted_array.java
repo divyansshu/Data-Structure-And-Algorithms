@@ -2,6 +2,7 @@ package arrays;
 
 public class Search_In_Rotated_Sorted_array {
 
+    //find the pivot element
     public static int pivot(int[] arr) {
          int start = 0;
         int end = arr.length - 1;
@@ -9,19 +10,22 @@ public class Search_In_Rotated_Sorted_array {
         while(start <= end) {
             int mid = (start+end)/2;
 
+            //case 1
             if(mid < end && arr[mid] > arr[mid+1]) return mid;
             
+            //case 2
             else if(mid > start && arr[mid] < arr[mid-1]) {
                 return mid-1;
             }
 
+            //case 3
             else if(arr[mid] <= arr[start]) {
                 end = mid - 1;
             }
+            //case 4
             else //arr[mid] >= arr[start]
              {
                 start = mid + 1;
-
             }
         }
         return -1;
