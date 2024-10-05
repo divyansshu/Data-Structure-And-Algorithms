@@ -1,4 +1,4 @@
-package arrays;
+package arrays.sliding_window;
 
 
 import java.util.Scanner;

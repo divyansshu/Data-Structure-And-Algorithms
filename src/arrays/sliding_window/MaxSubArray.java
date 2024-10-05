@@ -1,12 +1,30 @@
-package arrays;
+package arrays.sliding_window;
 
-public class PrefixSumArray {
-
+public class MaxSubArray {
     public static void main(String[] args) {
 
         int[] arr = {1, -2, 6, -1, 3};
         int sum = 0;
         int max = Integer.MIN_VALUE;
+
+        /** Brute force */
+        /*
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = i+1; j < arr.length; j++) {
+                sum = 0;
+                for(int k = i; k <= j; k++) {
+                    System.out.print(arr[k]+", ");
+                     sum += arr[k];
+                }
+                System.out.println("\n sum of sub array :"+ sum);
+                if(sum > max) {
+                    max = sum;
+                }
+            }
+        }
+        System.out.println("maximum sum of sub array is : "+ max);
+        */
+
         /** prefix sum Array */
 
         int[] prefixArr = new int[arr.length];
@@ -34,5 +52,7 @@ public class PrefixSumArray {
             }
         }
         System.out.println("maximum sum of sub array is : " + max);
+
+
     }
 }
