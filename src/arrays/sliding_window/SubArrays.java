@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class SubArrays {
 
+    //Brute force
+    //printing total number of sub arrays 
     public static void printSubArray(int[] arr) {
         int N = arr.length;
         for(int i = 0;  i<N; i++) {
