@@ -38,6 +38,18 @@ public class LinkedList {
         }
     }
 
+    public static void displayReverse() {
+        displayReverseUtil(head);
+    }
+
+    private static void displayReverseUtil(Node head) {
+        if(head == null) return;
+        else {
+            displayReverseUtil(head.next);
+            System.out.print(head.data+" ");
+        }
+    }
+
 
     public static void printList(Node head) {
 
@@ -55,6 +67,7 @@ public class LinkedList {
         list.insertHead(30);
         list.insertHead(20);
         list.insertHead(10);
+        displayReverse();
 
         list.deleteHead(10);
 
