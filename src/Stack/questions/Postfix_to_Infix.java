@@ -8,7 +8,7 @@ public class Postfix_to_Infix {
 
     public static boolean isOperand(char c) {
 
-        if(('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z')) return true;
+        if(('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || ('0' <= c && c <= '9')) return true;
 
         else return false;
 
@@ -35,7 +35,7 @@ public class Postfix_to_Infix {
     }
     public static void main(String[] args) {
         
-        String exp = "ab*c+";
+        String exp = "823^/23*+51*-";
         System.out.println(convertToInfix(exp));
     }
     
