@@ -1,7 +1,7 @@
 package Stack.questions;
 
 //push at bottom of a stack
-public class Stack {
+public class PushAtBottom {
     static Node root;
     static class Node{
 
@@ -22,7 +22,7 @@ public class Stack {
             return false;
     }
 
-    public static void push(int data) {
+    public void push(int data) {
 
         Node newNode = new Node(data);
 
@@ -49,7 +49,7 @@ public class Stack {
 //        }
 //    }
 
-    public static int pop() {
+    public int pop() {
 
         int popped = Integer.MIN_VALUE;
 
@@ -66,7 +66,7 @@ public class Stack {
     }
 
     //using recursion
-    public static void pushAtBottom(int data, Stack list) {
+    public void pushAtBottom(int data, PushAtBottom list) {
 
         if(list.isEmpty()) {
             list.push(data);
@@ -77,7 +77,7 @@ public class Stack {
         list.push(top);
     }
 
-    public static void display() {
+    public void display() {
         if(root == null) {
             System.out.println("stack is empty");
         }
@@ -92,7 +92,7 @@ public class Stack {
 
     public static void main(String[] args) {
 
-        Stack list = new Stack();
+        PushAtBottom list = new PushAtBottom();
         list.push(1);
         list.push(2);
         list.push(3);
