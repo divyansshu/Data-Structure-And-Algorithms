@@ -2,7 +2,7 @@ package Stack.Implementation.UsingLInkedList;
 
 public class StackAsLInkedList {
 
-    StackNode root;
+    StackNode top;
     static class StackNode {
         int data;
         StackNode next;
@@ -14,7 +14,7 @@ public class StackAsLInkedList {
     }
 
     public boolean isEmpty() {
-        if(root == null) {
+        if(top == null) {
             return true;
         }
         else
@@ -24,12 +24,12 @@ public class StackAsLInkedList {
     public void push(int data) {
         StackNode newNode = new StackNode(data);
 
-        if(root == null) {
-            root = newNode;
+        if(top == null) {
+            top = newNode;
         }
         else {
-            StackNode temp = root;
-            root = newNode;
+            StackNode temp = top;
+            top = newNode;
             newNode.next = temp;
         }
         System.out.println(data + " pushed to stack");
@@ -37,33 +37,33 @@ public class StackAsLInkedList {
 
     public int pop() {
         int popped = Integer.MIN_VALUE;
-        if(root == null) {
+        if(top == null) {
             System.out.println("stack is empty");
         }
         else {
-            popped = root.data;
-            root = root.next;
+            popped = top.data;
+            top = top.next;
         }
         return popped;
     }
 
     public int peek() {
 
-        if(root == null) {
+        if(top == null) {
             System.out.println("stack is empty");
             return Integer.MIN_VALUE;
         }
         else {
-            return root.data;
+            return top.data;
         }
     }
 
     public void print() {
 
-        if(root == null) {
+        if(top == null) {
             System.out.println("stack is empty");
         }
-        StackNode temp = root;
+        StackNode temp = top;
         while(temp != null) {
             System.out.print(temp.data+" ");
             temp = temp.next;
