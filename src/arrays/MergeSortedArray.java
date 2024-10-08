@@ -2,6 +2,9 @@ package arrays;
 
 public class MergeSortedArray {
 
+    //time complexity: O(m+n)
+    //space complextiy: O(1)
+
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
         // Start from the end of nums1 and nums2
         int i = m - 1;
