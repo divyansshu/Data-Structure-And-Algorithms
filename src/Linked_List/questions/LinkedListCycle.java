@@ -1,7 +1,5 @@
 package Linked_List.questions;
 
-import java.lang.classfile.components.ClassPrinter.ListNode;
-
 public class LinkedListCycle {
     static class Node {
         int data;
