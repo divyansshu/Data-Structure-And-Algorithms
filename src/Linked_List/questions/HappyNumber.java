@@ -38,8 +38,21 @@ public class HappyNumber {
         return sq;
     }
 
+    public static boolean isHappy_method_2(int n) {
+        if(n == 1 || n== 7) return true;
+
+        int sum = n;
+        while(sum > 9) {
+            sum = returnSquare(sum);
+            if(sum == 1 || sum == 7) return true;
+            if(sum == n) return false;        
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         System.out.println(isHappy(2));
+        System.out.println(isHappy_method_2(37));
 
     }
 
