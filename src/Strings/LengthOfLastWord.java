@@ -19,9 +19,30 @@ public class LengthOfLastWord {
         }
         return count;
     }
+
+    /*
+     * time complexity: O(n)
+     * space complextiy: O(1)
+     */
+    public static int lengthOfLastWord_2(String s) {
+        int len = s.length() - 1;
+        int count = 0;
+
+        while(len >= 0 && s.charAt(len) == ' ') {
+            len--;
+        }
+
+        while(len >= 0 && s.charAt(len) != ' ') {
+            count++;
+            len--;
+        }
+
+        return count;
+    }
     public static void main(String[] args) {
         String s = "   fly me   to   the moon     ";
         System.out.println(lengthOfLastWord(s.trim()));
+        System.out.println(lengthOfLastWord_2(s));
         
     }
     
