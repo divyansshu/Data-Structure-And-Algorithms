@@ -4,63 +4,64 @@ public class UsingArray {
 
     static class CircularQueue {
 
-         static int rear = -1;
-        static int front = -1;
-        static int size;
-        static int[] arr;
+        private int rear = -1;
+        private int front = -1;
+        private int size;
+        private int[] arr;
 
         CircularQueue(int size) {
             arr = new int[size];
             this.size = size;
         }
 
-        public static boolean isEmpty() {
-             return rear == -1 && front == -1;
-        }
-        public static boolean isFull() {
-            return front == (rear+1) % size;
+        public boolean isEmpty() {
+            return rear == -1 && front == -1;
         }
 
-        public static void add(int data) {
-            if(isFull()) {
+        public boolean isFull() {
+            return front == (rear + 1) % size;
+        }
+
+        public void add(int data) {
+            if (isFull()) {
                 System.out.println("queue is full");
                 return;
             }
 
-            //when first element is inserted
-            if(front == -1) {
+            // when first element is inserted
+            if (front == -1) {
                 front = 0;
             }
-            rear = (rear+1) % size;
+            rear = (rear + 1) % size;
             arr[rear] = data;
         }
 
-        public static int remove() {
-            if(isEmpty()) {
+        public int remove() {
+            if (isEmpty()) {
                 System.out.println("queue is empty");
                 return -1;
             }
 
             int result = arr[front];
-            if(front == rear) {
+            if (front == rear) {
                 front = rear = -1;
-            }
-            else {
-                front = (front+1) % size;
+            } else {
+                front = (front + 1) % size;
             }
 
             return result;
         }
 
-        public static int peek() {
+        public int peek() {
 
-            if(isEmpty()) {
+            if (isEmpty()) {
                 System.out.println("queue is empty");
                 return -1;
             }
 
             return arr[front];
         }
+
     }
 
     public static void main(String[] args) {
@@ -74,16 +75,16 @@ public class UsingArray {
         q.add(50);
         q.add(60);
 
-        System.out.println(q.remove()+" is removed from front");
+        System.out.println(q.remove() + " is removed from front");
 
         q.add(70);
-
-        System.out.println(q.peek()+" is in the front");
+    
+        System.out.println(q.peek() + " is in the front");
 
         while(!q.isEmpty()) {
-            System.out.print(q.peek()+" ");
-            q.remove();
+            System.out.print(q.remove()+" ");
         }
 
     }
+
 }
