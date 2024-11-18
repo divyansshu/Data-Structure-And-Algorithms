@@ -1,14 +1,15 @@
 package Strings;
 
 public class LongestCommonPrefix {
-    
+
     /*
-     * time complexity: (m * n) where 𝑛 is the number of strings and 𝑚 is the length of the shortest string.
+     * time complexity: (m * n) where 𝑛 is the number of strings and 𝑚 is the
+     * length of the shortest string.
      * space complexity: (1)
      */
 
     public static String longestCommonPrefix(String[] strs) {
-       if (strs == null || strs.length == 0) {
+        if (strs == null || strs.length == 0) {
             return "";
         }
 
@@ -34,7 +35,7 @@ public class LongestCommonPrefix {
     }
 
     public static void main(String[] args) {
-        String[] strs = { "flower", "flow", "flight"};
+        String[] strs = { "flower", "flow", "flight" };
 
         System.out.println(longestCommonPrefix(strs));
     }
