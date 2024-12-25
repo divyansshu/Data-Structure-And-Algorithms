@@ -1,3 +1,5 @@
+package Math;
+
 public class ValidPerfectSquare {
 
     // Method to check if a number is a perfect square

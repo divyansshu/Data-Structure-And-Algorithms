@@ -1,3 +1,5 @@
+package Math;
+
 public class SquareRoot {
 
     // Method to calculate the integer part of the square root of a given number x

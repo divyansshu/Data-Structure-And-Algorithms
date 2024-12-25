@@ -1,3 +1,5 @@
+package Math;
+
 public class ThreeDivisors {
 
     public static boolean threeDivisors(int n) {
