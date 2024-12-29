@@ -6,11 +6,22 @@ public class PlusOne {
 
     public static int[] plusOne(int[] digits) {
         int n = digits.length;
-        for (int i = n - 1; i >= 0; i--) {
+
+        //skip leading zeroes
+        int start = 0;
+        while(start < n && digits[start] == 0) {
+            start++;
+        }
+        //if all digits are zeroes, return [1]
+        if(start == n) {
+            return new int[]{1};
+        }
+
+        for (int i = n - 1; i >= start; i--) {
             // If the current digit is less than 9, just increment it and return the array
             if (digits[i] < 9) {
                 digits[i]++;
-                return digits;
+                return Arrays.copyOfRange(digits, start, n);
             }
             // If the current digit is 9, it becomes 0
             digits[i] = 0;
@@ -21,8 +32,8 @@ public class PlusOne {
         return newNumber;
     }
     public static void main(String[] args) {
-        int[] digits = { 5,4,3 };
-        int[] digits2 = { 9,9,9 };
+        int[] digits = { 0, 3, 7, 6, 4, 0, 5, 5, 5};
+        int[] digits2 = { 0,0,1,2 };
         System.out.println(Arrays.toString(plusOne(digits)));
         System.out.println(Arrays.toString(plusOne(digits2)));
 
