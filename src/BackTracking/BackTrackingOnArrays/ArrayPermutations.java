@@ -46,7 +46,7 @@ public class ArrayPermutations {
     }
    
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3 }; // Input array
+        int[] arr = { 1,2,3 }; // Input array
         List<List<Integer>> permutations = permute(arr); // Generate permutations
         System.out.println(permutations); // Print the permutations
     }
