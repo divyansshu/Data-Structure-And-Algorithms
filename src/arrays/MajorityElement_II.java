@@ -52,7 +52,13 @@ public class MajorityElement_II {
 
     // Function to find all majority elements that appear more than n/3 times
     // time complexity: O(n)
-    // space complexity: O(n)
+    // space complexity: O(1)
+    /*
+     * The result list does not grow with the size of the input nums. It holds a
+     * maximum of two elements because, as per the problem's constraints, there can
+     * be at most two numbers that appear more than 𝑛/3 times. 
+     * Thus, it is still considered constant space.
+     */
     public static List<Integer> repeatedNumberList(final List<Integer> nums) {
         List<Integer> result = new ArrayList<>(); // List to store result
         int candidate1 = -1; // First candidate for majority element
