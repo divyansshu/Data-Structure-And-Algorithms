@@ -35,7 +35,6 @@ def rotate_method_2(nums, k):
     # Reverse the remaining elements
     nums[k:] = reversed(nums[k:])
     
-
 # Example usage
 nums = [1,2,3,4,5,6]
 print('Array before rotation')
