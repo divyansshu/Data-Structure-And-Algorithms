@@ -9,7 +9,7 @@ def reverseWords(s: str) -> str:
     return ' '.join(reversed_words)
      
 # Input string
-s = "a good example"
+s = "a good      example"
 
 # Call the function and print the result
 print(reverseWords(s))
