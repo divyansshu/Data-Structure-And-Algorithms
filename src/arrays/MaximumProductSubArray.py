@@ -1,3 +1,20 @@
+'''
+# brute force:
+
+   def maxProduct(self,arr):
+        
+        maxProd = float('-inf')
+        for i in range(len(arr)):
+            product = 1
+            for j in range(i, len(arr)):
+                product *= arr[j]  
+                maxProd = max(maxProd, product)
+                if product == 0:
+                    break
+        return maxProd 
+'''
+   
+   
 # Function to find the maximum product subarray
 def maxProduct(arr):
     n = len(arr)
