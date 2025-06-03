@@ -8,8 +8,8 @@ def findPeakElement(nums: list[int]) -> int:
     if nums[n-1] > nums[n-2]: return n-1
     
     # Initialize the left and right pointers for binary search
-    left = 0
-    right = n - 1
+    left = 1
+    right = n - 2
     
     # Perform binary search
     while left <= right:
@@ -17,10 +17,10 @@ def findPeakElement(nums: list[int]) -> int:
         mid = (left + right) // 2
         
         # Check if the mid element is a peak
-        if (mid == 0 or nums[mid] > nums[mid-1]) and (mid == n-1 or nums[mid] > nums[mid+1]):
+        if nums[mid] > nums[mid-1] and nums[mid] > nums[mid+1]:
             return mid
         # If the left neighbor is greater, move the right pointer
-        elif mid > 0 and nums[mid-1] > nums[mid]:
+        elif nums[mid-1] > nums[mid]:
             right = mid - 1
         # Otherwise, move the left pointer
         else:
